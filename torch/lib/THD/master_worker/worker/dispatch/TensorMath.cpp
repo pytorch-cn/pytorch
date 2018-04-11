@@ -302,7 +302,9 @@ TENSOR_IMPLEMENT_LOGICAL(Ne,ne)
 TENSOR_IMPLEMENT_POINTWISE_FUNCTION(Abs,abs)
 TENSOR_IMPLEMENT_POINTWISE_FUNCTION(Sigmoid,sigmoid)
 TENSOR_IMPLEMENT_POINTWISE_FUNCTION(Log,log)
+TENSOR_IMPLEMENT_POINTWISE_FUNCTION(Log10,log10)
 TENSOR_IMPLEMENT_POINTWISE_FUNCTION(Log1p,log1p)
+TENSOR_IMPLEMENT_POINTWISE_FUNCTION(Log2,log2)
 TENSOR_IMPLEMENT_POINTWISE_FUNCTION(Exp,exp)
 TENSOR_IMPLEMENT_POINTWISE_FUNCTION(Expm1,expm1)
 TENSOR_IMPLEMENT_POINTWISE_FUNCTION(Cos,cos)
@@ -593,7 +595,7 @@ static void tensorLogicalall(rpc::RPCMessage& raw_message) {
   at::Tensor tensor = unpackRetrieveTensor(raw_message);
   finalize(raw_message);
 
-  int64_t response = tensor.all();
+  int64_t response = tensor.all().toCLong();
   sendValueToMaster(response);
 }
 
@@ -601,6 +603,6 @@ static void tensorLogicalany(rpc::RPCMessage& raw_message) {
   at::Tensor tensor = unpackRetrieveTensor(raw_message);
   finalize(raw_message);
 
-  int64_t response = tensor.any();
+  int64_t response = tensor.any().toCLong();
   sendValueToMaster(response);
 }

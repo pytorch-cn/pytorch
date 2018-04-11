@@ -34,8 +34,11 @@ PyTorch is an optimized tensor library for deep learning using GPUs and CPUs.
    torch.distributed <distributed>
    torch.legacy <legacy>
    cuda
-   ffi
+   bottleneck
+   checkpoint
+   cpp_extension
    data
+   ffi
    model_zoo
    onnx
 

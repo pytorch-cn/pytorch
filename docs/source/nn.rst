@@ -144,6 +144,12 @@ Pooling Layers
 .. autoclass:: FractionalMaxPool2d
     :members:
 
+:hidden:`LPPool1d`
+~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: LPPool1d
+    :members:
+
 :hidden:`LPPool2d`
 ~~~~~~~~~~~~~~~~~~
 
@@ -190,10 +196,22 @@ Pooling Layers
 Padding Layers
 --------------
 
+:hidden:`ReflectionPad1d`
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: ReflectionPad1d
+    :members:
+
 :hidden:`ReflectionPad2d`
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: ReflectionPad2d
+    :members:
+
+:hidden:`ReplicationPad1d`
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: ReplicationPad1d
     :members:
 
 :hidden:`ReplicationPad2d`
@@ -214,15 +232,63 @@ Padding Layers
 .. autoclass:: ZeroPad2d
     :members:
 
+:hidden:`ConstantPad1d`
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: ConstantPad1d
+    :members:
+
 :hidden:`ConstantPad2d`
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: ConstantPad2d
     :members:
 
+:hidden:`ConstantPad3d`
+~~~~~~~~~~~~~~~~~~~~~~~
 
-Non-linear Activations
-----------------------------------
+.. autoclass:: ConstantPad3d
+    :members:
+
+
+Non-linear Activations (weighed sum+nonlinearity)
+-------------------------------------------------
+
+:hidden:`ELU`
+~~~~~~~~~~~~~
+
+.. autoclass:: ELU
+    :members:
+
+:hidden:`Hardshrink`
+~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: Hardshrink
+    :members:
+
+:hidden:`Hardtanh`
+~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: Hardtanh
+    :members:
+
+:hidden:`LeakyReLU`
+~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: LeakyReLU
+    :members:
+
+:hidden:`LogSigmoid`
+~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: LogSigmoid
+    :members:
+
+:hidden:`PReLU`
+~~~~~~~~~~~~~~~
+
+.. autoclass:: PReLU
+    :members:
 
 :hidden:`ReLU`
 ~~~~~~~~~~~~~~
@@ -236,10 +302,10 @@ Non-linear Activations
 .. autoclass:: ReLU6
     :members:
 
-:hidden:`ELU`
-~~~~~~~~~~~~~
+:hidden:`RReLU`
+~~~~~~~~~~~~~~~
 
-.. autoclass:: ELU
+.. autoclass:: RReLU
     :members:
 
 :hidden:`SELU`
@@ -248,46 +314,10 @@ Non-linear Activations
 .. autoclass:: SELU
     :members:
 
-:hidden:`PReLU`
-~~~~~~~~~~~~~~~
-
-.. autoclass:: PReLU
-    :members:
-
-:hidden:`LeakyReLU`
-~~~~~~~~~~~~~~~~~~~
-
-.. autoclass:: LeakyReLU
-    :members:
-
-:hidden:`Threshold`
-~~~~~~~~~~~~~~~~~~~
-
-.. autoclass:: Threshold
-    :members:
-
-:hidden:`Hardtanh`
-~~~~~~~~~~~~~~~~~~
-
-.. autoclass:: Hardtanh
-    :members:
-
 :hidden:`Sigmoid`
 ~~~~~~~~~~~~~~~~~
 
 .. autoclass:: Sigmoid
-    :members:
-
-:hidden:`Tanh`
-~~~~~~~~~~~~~~
-
-.. autoclass:: Tanh
-    :members:
-
-:hidden:`LogSigmoid`
-~~~~~~~~~~~~~~~~~~~~
-
-.. autoclass:: LogSigmoid
     :members:
 
 :hidden:`Softplus`
@@ -308,11 +338,26 @@ Non-linear Activations
 .. autoclass:: Softsign
     :members:
 
+:hidden:`Tanh`
+~~~~~~~~~~~~~~
+
+.. autoclass:: Tanh
+    :members:
+
 :hidden:`Tanhshrink`
 ~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: Tanhshrink
     :members:
+
+:hidden:`Threshold`
+~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: Threshold
+    :members:
+
+Non-linear Activations (Other)
+------------------------------
 
 :hidden:`Softmin`
 ~~~~~~~~~~~~~~~~~
@@ -337,7 +382,6 @@ Non-linear Activations
 
 .. autoclass:: LogSoftmax
     :members:
-
 
 Normalization layers
 ----------------------------------
@@ -376,6 +420,18 @@ Normalization layers
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: InstanceNorm3d
+    :members:
+
+:hidden:`LayerNorm`
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: LayerNorm
+    :members:
+
+:hidden:`LocalResponseNorm`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: LocalResponseNorm
     :members:
 
 Recurrent layers
@@ -778,6 +834,11 @@ Pooling functions
 
 .. autofunction:: max_unpool3d
 
+:hidden:`lp_pool1d`
+~~~~~~~~~~~~~~~~~~~
+
+.. autofunction:: lp_pool1d
+
 :hidden:`lp_pool2d`
 ~~~~~~~~~~~~~~~~~~~
 
@@ -936,6 +997,21 @@ Normalization functions
 ~~~~~~~~~~~~~~~~~~~~
 
 .. autofunction:: batch_norm
+
+:hidden:`instance_norm`
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autofunction:: instance_norm
+
+:hidden:`layer_norm`
+~~~~~~~~~~~~~~~~~~~~
+
+.. autofunction:: layer_norm
+
+:hidden:`local_response_norm`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autofunction:: local_response_norm
 
 :hidden:`normalize`
 ~~~~~~~~~~~~~~~~~~~~
@@ -1119,14 +1195,14 @@ torch.nn.init
 
 .. currentmodule:: torch.nn.init
 .. autofunction:: calculate_gain
-.. autofunction:: uniform
-.. autofunction:: normal
-.. autofunction:: constant
-.. autofunction:: eye
-.. autofunction:: dirac
-.. autofunction:: xavier_uniform
-.. autofunction:: xavier_normal
-.. autofunction:: kaiming_uniform
-.. autofunction:: kaiming_normal
-.. autofunction:: orthogonal
-.. autofunction:: sparse
+.. autofunction:: uniform_
+.. autofunction:: normal_
+.. autofunction:: constant_
+.. autofunction:: eye_
+.. autofunction:: dirac_
+.. autofunction:: xavier_uniform_
+.. autofunction:: xavier_normal_
+.. autofunction:: kaiming_uniform_
+.. autofunction:: kaiming_normal_
+.. autofunction:: orthogonal_
+.. autofunction:: sparse_
